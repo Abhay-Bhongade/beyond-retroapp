@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { Route, Routes } from "react-router-dom"
+import CartDetails from './Pages/CartDetails'
+import CompoWrapper from './Pages/CompoWrapper'
+import Login from './Pages/Login'
+import Nike from './Pages/Nike'
+import "./App.css"
+import ShoppingBag from './Pages/ShoppingBag'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <CompoWrapper /> */}
+      <Routes>
+        <Route path='/' element={<CompoWrapper />} />
+        <Route path='/cart/:id' element={<CartDetails />} />
+        <Route path='/shoppingPage' element={<ShoppingBag />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
